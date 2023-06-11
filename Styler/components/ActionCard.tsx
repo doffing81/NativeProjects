@@ -22,12 +22,12 @@ export default function ActionCard() {
                 Mosaic Ventures, and AXA Strategic Ventures.
             </Text>
         </View>
-        <View>
-            <TouchableOpacity onPress={() => openWebsite('https://blockstream.com')}>
-                <Text>More Info</Text>
+        <View style={styles.footer}>
+            <TouchableOpacity style={styles.button} onPress={() => openWebsite('https://blockstream.com')}>
+                <Text style={styles.buttonText}>More Info</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => openWebsite('https://blockstream.info')}>
-                <Text>Block Explorer</Text>
+            <TouchableOpacity style={styles.button} onPress={() => openWebsite('https://blockstream.info')}>
+                <Text style={styles.buttonText}>Block Explorer</Text>
             </TouchableOpacity>
         </View>
       </View>
@@ -43,19 +43,22 @@ const styles = StyleSheet.create({
     },
     card: {
         width: '95%',
-        height: 300,
+        height: 275,
         marginVertical: '2.5%',
         marginHorizontal: '2.5%',
         borderRadius: 6,
         backgroundColor: '#eee'
     },
     elevatedCard: {},
-    header: {},
+    header: {        
+        height: 40,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     headerText: {
         fontSize: 16,
-        fontWeight: 'bold',
-        paddingHorizontal: 8,
-        marginVertical: 5
+        fontWeight: 'bold'
     },
     cardImage: {
         height: '40%',
@@ -67,5 +70,19 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         paddingHorizontal: 12
     },
-    footer: {}
+    footer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+        padding: 8
+    },
+    buttonText: {
+        fontSize: 12,
+        color: '#3366CC'
+    },
+    button: {
+        borderRadius: 6,
+        backgroundColor: 'white',
+        padding: 8
+    }
 })
