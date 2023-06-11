@@ -10,7 +10,12 @@ export default function FancyCard() {
         <View style={styles.cardBody}>
             <Text style={styles.cardTitle}>Mathematics</Text>
             <Text style={styles.cardLabel}>Invented or Discovered?</Text>
-            <Text style={styles.cardDescription}>Mathematics is invented due to the very nature of 0 and 1, and thereby all quantification, that is, at no point in time does 0 exist (there is nothing), but rather, something may not exist in relation to something else, whereby 0 is subject to, or an abstraction of, something else, a relation that must be chosen; subjective. One is also subjective. Any one thing is not only comprised of many, but is a part of many, whereby any one thing is merely chosen to be that single thing taken into consideration.</Text>
+            <Text style={styles.cardDescription}>Mathematics is invented due to the very nature of 0 and 1, 
+            and thereby all quantification, that is, at no point in time does 0 exist (there is nothing), 
+            but rather, something may not exist in relation to something else, whereby 0 is subject to, 
+            or an abstraction of, something else, a relation that must be chosen; subjective. One is also subjective. 
+            Any one thing is not only comprised of many, but is a part of many, whereby any one thing is merely chosen to be 
+            that single thing taken into consideration.</Text>
             <Text style={styles.cardFooter}>All is chosen, all is invented.</Text>
         </View>
       </View>
