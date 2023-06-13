@@ -163,7 +163,7 @@ export default function App() {
                 <TouchableOpacity
                 style={styles.secondaryBtn}
                 onPress={ () => {
-                  handleReset()
+                  handleReset();
                   resetPasswordState()
                 }}
                 >
@@ -175,7 +175,10 @@ export default function App() {
           </Formik>
         </View>
         {isPasswordGenerated ? (
-          <Text>test</Text>
+          <View style={[styles.card, styles.cardElevated]}>
+            <Text selectable style={styles.generatedPassword}>{password}</Text>
+            <Text style={styles.prompt}>Long Press to Copy</Text>
+          </View>
         ) : null}
       </SafeAreaView>
     </ScrollView>
@@ -194,15 +197,6 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '600',
     marginBottom: 15,
-  },
-  subTitle: {
-    fontSize: 26,
-    fontWeight: '600',
-    marginBottom: 2,
-  },
-  description: {
-    color: '#758283',
-    marginBottom: 8,
   },
   heading: {
     fontSize: 15,
@@ -277,7 +271,13 @@ const styles = StyleSheet.create({
   generatedPassword: {
     fontSize: 22,
     textAlign: 'center',
-    marginBottom: 12,
+    marginTop: 8,
     color:'#000'
+  },
+  prompt: {
+    textAlign: 'center',
+    color: '#758283',
+    marginBottom: 8,
+    marginTop: 8
   },
 })
