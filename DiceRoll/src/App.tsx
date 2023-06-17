@@ -5,11 +5,12 @@
  * @format
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   Image,
   ImageSourcePropType,
+  Pressable,
   StyleSheet,
   Text,
   View,
@@ -35,9 +36,42 @@ const Dice = ({imageUrl}: DiceProps): JSX.Element => {
 }
 
 function App(): JSX.Element {
+  const [diceImage, setDiceImage] = useState<ImageSourcePropType>(diceOne)
+
+  const rollDice = () => {
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
+
+    switch (randomNumber) {
+      case 1:
+        setDiceImage(diceOne)
+        break;
+      case 2:
+        setDiceImage(diceTwo)
+        break;
+      case 3:
+        setDiceImage(diceThree)
+        break;
+      case 4:
+        setDiceImage(diceFour)
+        break;
+      case 5:
+        setDiceImage(diceFive)
+        break;
+      case 6:
+        setDiceImage(diceSix)
+        break;
+      default:
+        setDiceImage(diceOne)
+        break;
+    }
+  }
+
   return (
-    <View>
-      <Text>Text is here</Text>
+    <View style={styles.container}>
+      <Dice imageUrl={diceImage}/>
+      <Pressable onPress={rollDice}>
+        <Text style={styles.rollDiceBtnText}>Roll the Dice</Text>
+      </Pressable>
     </View>
   );
 }
