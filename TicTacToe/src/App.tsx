@@ -16,8 +16,10 @@ import {
   View,
 } from 'react-native';
 
-function App(): JSX.Element {
+import Snackbar from 'react-native-snackbar';
+import Marker from './components/Marker'
 
+function App(): JSX.Element {
   return (
     <SafeAreaView>
       <StatusBar/>
