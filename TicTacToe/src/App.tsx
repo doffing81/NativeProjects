@@ -117,7 +117,7 @@ function App(): JSX.Element {
           </View>
         ) : (
           <View style={[styles.playerInfo, is_X ? styles.playerX : styles.playerO]}>
-            <Text>
+            <Text style={styles.gameTurnTxt}>
               Player {is_X ? 'X' : 'O'}'s turn
             </Text>
           </View>
@@ -165,10 +165,10 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   playerX: {
-    backgroundColor: '#38CC77',
+    backgroundColor: 'green',
   },
   playerO: {
-    backgroundColor: '#F7CD2E',
+    backgroundColor: 'red',
   },
   grid: {
     margin: 12,
@@ -183,14 +183,13 @@ const styles = StyleSheet.create({
   },
   winnerInfo: {
     borderRadius: 8,
-    backgroundColor: '#38CC77',
+    backgroundColor: 'orange',
     shadowOpacity: 0.1,
   },
   winnerTxt: {
     fontSize: 20,
     color: '#FFFFFF',
     fontWeight: '600',
-    // textTransform: 'capitalize',
   },
   gameBtn: {
     alignItems: 'center',
